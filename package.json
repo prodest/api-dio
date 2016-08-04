@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/alvarollmenezes/base-nodejs-api#readme",
   "dependencies": {
+    "apicache": "0.0.14",
     "compression": "^1.6.2",
     "cors": "^2.7.1",
     "debug": "^2.2.0",
