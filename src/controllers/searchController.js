@@ -19,6 +19,7 @@ module.exports = () => {
                 return {
                     date: `${a.fields.day}/${a.fields.month}/${a.fields.year}`,
                     url: `${dio.pdfEndpoint}/${a.fields.diario_id}`,
+                    page: a.fields.pagina,
                     pageUrl: `${dio.pdfEndpoint}/${a.fields.diario_id}/${a.fields.pagina}`,
                     highlights: a.highlight.conteudo
                 };
