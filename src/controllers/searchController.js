@@ -9,7 +9,7 @@ module.exports = () => {
         const query = req.query.query;
         const dateMin = req.query.dateMin;
         const dateMax = req.query.dateMax;
-        const page = req.query.page;
+        const page = req.query.pageNumber;
         const sort = req.query.sort;
 
         dioService().getListBy( query, dateMin, dateMax, page, sort )
@@ -18,16 +18,16 @@ module.exports = () => {
             const itens = result.hits.hits.map( a => {
                 return {
                     date: `${a.fields.day}/${a.fields.month}/${a.fields.year}`,
-                    url: `${dio.pdfEndpoint}/${a.fields.diario_id}`,
-                    page: a.fields.pagina,
+                    editionUrl: `${dio.pdfEndpoint}/${a.fields.diario_id}`,
+                    pageNumber: a.fields.pagina[ 0 ],
                     pageUrl: `${dio.pdfEndpoint}/${a.fields.diario_id}/${a.fields.pagina}`,
                     highlights: a.highlight.conteudo
                 };
             } );
 
             res.json( {
-                hits: total,
-                itens: itens
+                totalHits: total,
+                hits: itens
             } );
         } )
         .catch( err => {
