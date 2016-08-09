@@ -21,6 +21,8 @@ module.exports = () => {
             throw new Error( 'Parâmetro query é obrigatório.' );
         }
 
+        query = encodeURIComponent( query );
+
         let uri = `${dio.searchEndpoint}/${query}/${page || 0}`;
 
         if ( dateMin ) {
