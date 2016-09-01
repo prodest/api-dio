@@ -5,6 +5,4 @@ module.exports = app => {
     const latestController = require( '../controllers/latestController' )();
 
     app.get( '/latest', apicache( '10 minutes' ), latestController.getList );
-
-    return app;
 };
