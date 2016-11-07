@@ -10,9 +10,9 @@ let app = express();
 app.use( apiMiddleware( {
     compress: true,
     cors: true,
-    authentication: {
-        jwtPublicKey: config.jwtPublicKey
-    }
+    // authentication: {
+    //     jwtPublicKey: config.jwtPublicKey
+    // }
 } ) );
 
 // load our routes
