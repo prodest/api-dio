@@ -1,11 +1,16 @@
-require: sudo
+dist: trusty
 language: node_js
+node_js:
+  - 6
 services:
   - docker
+env:
+  - DOCKER_IMAGE=prodest/api-dio:${TRAVIS_COMMIT:0:7}
 script: 
-  docker build -t prodest/api-dio .
+  - scripts/travis.sh
 deploy:
   provider: script
-  script: docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push prodest/api-dio
+  skip_cleanup: true
+  script: scripts/deploy.sh api api api-dio
   on:
     branch: master
