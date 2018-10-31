@@ -1,6 +1,5 @@
 module.exports = app => {
+  const searchController = require('../controllers/searchController')();
 
-    const searchController = require( '../controllers/searchController' )();
-
-    app.get( '/search', searchController.getList );
+  app.get('/search', searchController.getList);
 };

@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const newrelic = require("./src/config/newrelic");
+const newrelic = require('./src/config/newrelic');
 
 /**
  * New Relic agent configuration.
@@ -25,4 +25,4 @@ exports.config = {
      */
     level: newrelic.level
   }
-}
+};

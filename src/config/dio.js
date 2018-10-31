@@ -5,11 +5,11 @@ const sortParam = process.env.SORT_PARAM || 'sort=';
 const sortDefault = process.env.SORT_DEFAULT || 'date';
 
 module.exports = {
-    latestEndpoint: dioLatestUrl,
-    searchEndpoint: dioSearchUrl,
-    pdfEndpoint: pdfUrl,
-    sort: {
-        param: sortParam,
-        default: sortDefault
-    }
+  latestEndpoint: dioLatestUrl,
+  searchEndpoint: dioSearchUrl,
+  pdfEndpoint: pdfUrl,
+  sort: {
+    param: sortParam,
+    default: sortDefault
+  }
 };
